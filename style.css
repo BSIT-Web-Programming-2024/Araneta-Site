@@ -702,30 +702,10 @@ p {
 	/*text area*/
 	.Message-container {
 		display: flex;
-		justify-content: center; /* Centers horizontally */
-		align-items: center;    /* Centers vertically */
-		height: 100vh;          /* Makes the container fill the viewport height */
-	  }
-	  
-	  .Message-container {
-		display: flex;
 		flex-direction: column;  /* Stacks elements vertically */
 		align-items: center;     /* Centers elements horizontally */
+		justify-content: center; /* Centers elements vertically */
 		height: 100vh;           /* Full viewport height */
-		justify-content: center; /* Centers the textarea and button vertically */
-	  }
-	  
-	  .Message-header {
-		margin-bottom: 20px;     /* Adds spacing below "Message me:" */
-		text-align: center;      /* Centers the text */
-	  }
-	  
-	  .Message-container {
-		display: flex;
-		flex-direction: column;  /* Stacks elements vertically */
-		align-items: center;     /* Centers elements horizontally */
-		height: 100vh;           /* Full viewport height */
-		justify-content: center; /* Centers all elements vertically */
 	  }
 	  
 	  .Message-header {
@@ -758,6 +738,19 @@ p {
 		cursor: pointer;          
 		transition: background-color 0.3s;
 	  }
+	  
+	  form {
+		display: flex;
+		flex-direction: column;  /* Stacks elements vertically */
+		align-items: center;     /* Centers elements horizontally */
+		width: 100%;             /* Ensures the form takes the full width */
+	  }
+	  
+	  .Message-container form,
+	  .Message-header {
+		text-align: center;  /* Ensures "Message me:" and form elements are centered */
+	  }
+	  
 	  
 	  .submit-button:hover {
 		background-color: #000000; 

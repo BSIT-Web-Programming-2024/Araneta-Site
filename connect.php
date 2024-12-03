@@ -1,20 +1,21 @@
 <?php
 	$Name = $_POST['Name'];
-	$Email =$_POST['Mes'];
-	$Mes = $_POST['Email'];
+	$Email =$_POST['Email'];
+	$Message = $_POST['Message'];
+
 
 	// Database connection
-	$conn = new mysqli('localhost','root','','eric');
-	if($conn->connect_error){
-		echo "$conn->connect_error";
-		die("Connection Failed : ". $conn->connect_error);
+	$connect = new mysqli('localhost','root','','araneta');
+	if($connect->connect_error){
+		echo "$connect->connect_error";
+		die("Connection Failed : ". $connect->connect_error);
 	} else {
-		$stmt = $conn->prepare("insert into contact(Name, Email, Mes) values(?, ?, ?, ?, ?)");
-		$stmt->bind_param("sss", $Name, $Email, $Mes);
+		$stmt = $connect->prepare("INSERT INTO list (Name, Email, Message) VALUES (?, ?, ?)");
+		$stmt->bind_param("sss", $Name, $Email, $Message);
 		$execval = $stmt->execute();    
 		echo $execval;
-		echo "Registration successfully...";
+		echo " 	Inserted!";
 		$stmt->close();
-		$conn->close();
+		$connect->close();
 	}
 ?>
