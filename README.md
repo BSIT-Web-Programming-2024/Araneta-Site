@@ -1,2 +1,0 @@
-# Araneta-Site
-BIpBirapBoop
